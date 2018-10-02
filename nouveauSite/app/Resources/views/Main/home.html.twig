@@ -1,0 +1,96 @@
+{# héritage du fichier basee.html.twig#}
+{% extends "base.html.twig"%}
+
+{% block title %}
+    Home
+{% endblock%}   
+{% block body %}
+    <div class="pipboy" >
+        <img src="bundle/app/public/images/pipboy.jpg"  width="1200" style="border-radius: 10px 10px 10px 10px; margin-top: 20%; position: absolute;" alt=""/>
+    </div>
+    <div class="container">
+  <div class="row">
+      <div class="col-lg">
+    <div id="actu">
+        <h1>Actu</h1>
+    </div>
+            <div id="example" >
+
+                <ul>
+
+                    <li><h5>Fallout 76 : La phase de B.E.T.A. prend date</h5>Bethesda Softworks nous apprend donc que cette phase de test, ouverte aux personnes ayant précommandé le jeu de survie connecté, débutera le 23 octobre sur Xbox One et le 30 octobre sur PC et PS4.<br>
+                        <img src="bundle/app/public/images/beta.jpg" width="400" height="200" alt=""/>
+                    </li>
+
+                    <li><h5>Fallout 76 : Faites l'atome, pas la guerre ! Vidéo armes nucléaires</h5>Vous referez surface ! Présenté par le Comité du Tricentenaire Américain Vault-Tec. Épisode du jour : "Faites l'atome, pas la guerre : Les clés d'un succès durable".
+                        <video width="320" height="240" controls>
+                            <source src="bundle/app/public/images/faite l'atome.mp4" type="video/mp4">
+                            Your browser does not support the <code>video</code> tag.
+                        </video>
+                    </li>
+
+                    <li><h5>Fallout 76 : VAULT-TEC présente : Introduction du Multiplayer. Vidéo Multiplayeur</h5>Le multijoueur arrive enfin aux jeux de rôle épiques en monde ouvert de Bethesda Game Studios. À partir de la Bethesda E3 Showcase, regardez l’introduction du multijoueur You Will Emerge dans Fallout 76.<br>
+                        <video width="320" height="240" controls>
+                            <source src="bundle/app/public/images/multi.mp4" type="video/mp4">
+                            Your browser does not support the <code>video</code> tag.
+                        </video>
+                    </li>
+                    <li><h5>Fallout 76 : VAULT-TEC présente : Poser les fondations ! Vidéo fabrication et construction</h5>Vous referez surface ! Présenté par le Comité du Tricentenaire Américain Vault-Tec. Épisode du jour : "Un nouveau Rêve américain : Poser les fondations".
+                        <video width="320" height="240" controls>
+                            <source src="bundle/app/public/video/les-fondation.mp4" type="video/mp4">
+                            Your browser does not support the <code>video</code> tag.
+                        </video>
+                    </li>
+                </ul>
+         </div>  
+    </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script> $(function () {
+            $("ul#ticker01").liScroll({travelocity: 0.15});
+        });</script>
+    <!-- Effet de loading réglée sur 3000ms dans une div sur toute les pages-->
+    <div class="loader">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $(".loader").delay(1200).fadeOut("slow");
+            });
+        </script>
+    </div>
+    <!-- chargement des scripts -->	
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/fisheye-iutil.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jqDock.min.js"></script>
+    <!-- Initialisation de la fonction -->		
+    <script type="text/javascript">
+        $(function () {
+            var jqDockOpts = {align: 'left', duration: 200, labels: 'tc', size: 48, distance: 85};
+            $('#jqDock').jqDock(jqDockOpts);
+        });
+    </script>
+
+    <!-- Initialisation de la fonction -->		
+    <script type="text/javascript" src="js/external/jquery.ui.totop.js"></script>
+    <script type="text/javascript" src="js/external/jquery.supertoc.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+
+            // TOC
+            $('.sliderkit-panels').superToc({
+                headings: "h1, h2"
+            });
+
+            // To top plugin
+            $().UItoTop({scrollSpeed: 300});
+        });
+    </script>
+
+    <script src="js/vticker.js"></script>
+    <script>
+        $(function () {
+            $('#example').vTicker();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>{% block title %}Fallout Life{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="css/CSS-fallout.css">
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> 
+        {% endblock %}
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+         
+        <div class="row">
+            <div class="col-12"> 
+                <img src="bundle/app/public/images/bannier.png" height="200" width="1150" alt="" style="margin-left: 10%; border-radius: 10px 10px 10px 10px; position: absolute;"/>
+            </div>
+        </div>
+            {% block body %}
+        {% endblock %}
+        
+        <div id="dockContainer">
+            <ul id="jqDock">
+                <li><a class="dockItem" href="#"><img class="menu" src="bundle/app/public/images/boy.gif" alt="Accueil" title='Actu' style="border-radius: 10% 10% 10% 10%; width:50%; height:50%;"/>Actu</a></li>
+                <li><a class="dockItem" href="#"><img class="menu" src="bundle/app/public/images/boy1.gif" alt="Historique" title="Historique" style="border-radius: 10% 10% 10% 10%; "/></a></li>
+                <li><a class="dockItem" href="#"><img class="menu" src="bundle/app/public/images/boy2.gif" alt="Live Twitch" title="Live Twitch" style="border-radius: 10% 10% 10% 10%; "/></a></li>
+                <li><a class="dockItem" href="#"><img class="menu" src="bundle/app/public/images/boy3.gif" alt="Musique" title="Musique" style="border-radius: 10% 10% 10% 10%; " /></a></li>
+                <li><a class="dockItem" href="#"><img class="menu" src="bundle/app/public/images/boy4.gif" alt="video" title="Video" style="border-radius: 10% 10% 10% 10%; "/></a></li>
+                <li><a class="dockItem" href="#"><img class="menu" src="bundle/app/public/images/boy5.gif" alt="Liens" title="Liens" style="border-radius: 10% 10% 10% 10%; "/></a></li>
+                <li><a class="dockItem" href="#"><img class="menu" src="bundle/app/public/images/boy6.gif" alt="Contact" title="Contact" style="border-radius: 10% 10% 10% 10%;"/></a></li>
+                <li><a class="dockItem" href="#"><img class="menu" src="bundle/app/public/images/boy7.gif" alt="rss" title="RSS" style="border-radius: 10% 10% 10% 10%; "/></a></li>
+            </ul>
+      
+        </div>
+  
+
+
+        {% block carousel %}
+        {% endblock %}
+        {% block lien %}
+        {% endblock %}    
+        {% block form %}
+        {% endblock %} 
+
+        {% block message %}
+        {% endblock %}
+
+        <footer>
+            <div class="footer">
+    <a href="https://www.linkedin.com/in/frederic-dupont-b60215152/">
+        <img src="bundle/app/public/images/linkedin.jpg" width="20" height="20" alt=""/></a>
+    <a href="https://fallout.bethesda.net/">
+        <img src="bundle/app/public/images/bethesda.jpg" width="50" height="20" alt=""/></a>
+            </div>
+        </footer>
+        {% block javascripts %}
+            <script
+                src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+            <<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+            <!-- chargement des scripts -->	
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/fisheye-iutil.min.js"></script>
+            <script type="text/javascript" src="js/jquery.jqDock.min.js"></script>
+            <!-- Initialisation de la fonction -->		
+
+        {% endblock %}
+
+        <script type="text/javascript">
+            $(function () {
+                var jqDockOpts = {align: 'left', duration: 200, labels: 'tc', size: 48, distance: 85};
+                $('#jqDock').jqDock(jqDockOpts);
+            });
+        </script>
+
+    </body>
+</html>
